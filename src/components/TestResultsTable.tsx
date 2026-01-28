@@ -53,22 +53,25 @@ export function TestResultsTable({ results, title = "Test Results" }: TestResult
 
   return (
     <div className="w-full">
-      <h3 className="text-lg font-semibold text-foreground mb-4">{title}</h3>
+      <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
+        <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+        {title}
+      </h3>
       
-      <div className="overflow-x-auto rounded-lg border bg-card">
+      <div className="overflow-x-auto rounded-xl card-space">
         <table className="w-full">
           <thead>
-            <tr className="border-b bg-secondary/50">
-              <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">
+            <tr className="border-b border-white/10">
+              <th className="px-4 py-4 text-left text-sm font-semibold text-foreground">
                 Test Name
               </th>
-              <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">
+              <th className="px-4 py-4 text-left text-sm font-semibold text-foreground">
                 Result
               </th>
-              <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">
+              <th className="px-4 py-4 text-left text-sm font-semibold text-foreground hidden sm:table-cell">
                 Reference Range
               </th>
-              <th className="px-4 py-3 text-left text-sm font-semibold text-foreground">
+              <th className="px-4 py-4 text-left text-sm font-semibold text-foreground">
                 Status
               </th>
             </tr>
@@ -81,38 +84,42 @@ export function TestResultsTable({ results, title = "Test Results" }: TestResult
                 <tr 
                   key={result.id}
                   className={cn(
-                    "border-b last:border-0 transition-colors hover:bg-secondary/30",
+                    "border-b border-white/5 last:border-0 transition-all hover:bg-white/5",
                     result.status === "critical" && "bg-critical/5"
                   )}
-                  style={{ animationDelay: `${index * 50}ms` }}
+                  style={{ 
+                    animation: `fade-in 0.3s ease-out forwards`,
+                    animationDelay: `${index * 50}ms`,
+                    opacity: 0,
+                  }}
                 >
                   <td className="px-4 py-3">
-                    <span className="font-medium text-foreground">
+                    <span className="font-medium text-foreground text-sm md:text-base">
                       {result.testName}
                     </span>
                   </td>
                   <td className="px-4 py-3">
                     <span className={cn(
-                      "font-mono",
-                      result.status === "critical" ? "text-critical font-semibold" :
-                      result.status !== "normal" ? "text-warning font-medium" :
+                      "font-mono text-sm md:text-base",
+                      result.status === "critical" ? "text-critical font-bold glow-text" :
+                      result.status !== "normal" ? "text-warning font-semibold" :
                       "text-foreground"
                     )}>
-                      {result.observedValue} {result.unit}
+                      {result.observedValue} <span className="text-muted-foreground text-xs">{result.unit}</span>
                     </span>
                   </td>
-                  <td className="px-4 py-3">
+                  <td className="px-4 py-3 hidden sm:table-cell">
                     <span className="text-muted-foreground text-sm">
                       {result.referenceRange}
                     </span>
                   </td>
                   <td className="px-4 py-3">
                     <span className={cn(
-                      "inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium border",
+                      "inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-xs font-medium border",
                       statusConfig.className
                     )}>
                       {statusConfig.icon}
-                      {statusConfig.label}
+                      <span className="hidden sm:inline">{statusConfig.label}</span>
                     </span>
                   </td>
                 </tr>

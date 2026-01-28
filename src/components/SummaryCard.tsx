@@ -18,24 +18,29 @@ export function SummaryCard({
 }: SummaryCardProps) {
   return (
     <div className={cn(
-      "rounded-xl border overflow-hidden",
-      variant === "patient" && "bg-gradient-to-br from-primary/5 to-info/5",
-      variant === "doctor" && "bg-gradient-to-br from-secondary to-card",
-      variant === "default" && "bg-card",
+      "rounded-2xl overflow-hidden card-space",
       className
     )}>
       <div className={cn(
-        "px-5 py-4 border-b flex items-center gap-3",
-        variant === "patient" && "bg-primary/5 border-primary/10",
-        variant === "doctor" && "bg-secondary border-border",
-        variant === "default" && "bg-secondary/50"
+        "px-5 py-4 border-b border-white/10 flex items-center gap-3",
+        variant === "patient" && "bg-gradient-to-r from-primary/10 to-info/5",
+        variant === "doctor" && "bg-gradient-to-r from-secondary/50 to-muted/30",
+        variant === "default" && "bg-white/5"
       )}>
         <div className={cn(
-          "p-2 rounded-lg",
-          variant === "patient" && "bg-primary/10 text-primary",
-          variant === "doctor" && "bg-foreground/5 text-foreground",
-          variant === "default" && "bg-muted text-muted-foreground"
-        )}>
+          "p-2.5 rounded-xl",
+          variant === "patient" && "bg-primary/20 text-primary",
+          variant === "doctor" && "bg-accent/20 text-accent",
+          variant === "default" && "bg-white/10 text-muted-foreground"
+        )}
+        style={{
+          boxShadow: variant === "patient" 
+            ? "0 0 15px rgba(0,200,200,0.2)" 
+            : variant === "doctor"
+            ? "0 0 15px rgba(250,200,100,0.2)"
+            : "none"
+        }}
+        >
           {icon}
         </div>
         <h3 className="font-semibold text-foreground">{title}</h3>
