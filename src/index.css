@@ -2,139 +2,83 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Medical Report Analyzer Design System
-   A professional, trust-inspiring healthcare aesthetic */
+/* Space Theme Medical Analyzer Design System
+   Cosmic, immersive, interactive */
 
 @layer base {
   :root {
-    /* Core backgrounds */
-    --background: 210 20% 98%;
-    --foreground: 215 25% 15%;
+    /* Deep space backgrounds */
+    --background: 230 25% 7%;
+    --foreground: 220 20% 95%;
 
-    /* Cards and surfaces */
-    --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    /* Cosmic cards */
+    --card: 230 30% 12%;
+    --card-foreground: 220 20% 95%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover: 230 30% 10%;
+    --popover-foreground: 220 20% 95%;
 
-    /* Primary - Medical Teal */
-    --primary: 187 75% 35%;
-    --primary-foreground: 0 0% 100%;
+    /* Primary - Cosmic Cyan */
+    --primary: 185 80% 55%;
+    --primary-foreground: 230 25% 7%;
 
-    /* Secondary - Soft Slate */
-    --secondary: 210 15% 95%;
-    --secondary-foreground: 215 25% 25%;
+    /* Secondary - Nebula Purple */
+    --secondary: 260 40% 20%;
+    --secondary-foreground: 220 20% 90%;
 
-    /* Muted elements */
-    --muted: 210 15% 93%;
-    --muted-foreground: 215 15% 45%;
+    /* Muted - Deep Space */
+    --muted: 230 25% 15%;
+    --muted-foreground: 220 15% 60%;
 
-    /* Accent - Cyan */
-    --accent: 187 70% 45%;
-    --accent-foreground: 0 0% 100%;
+    /* Accent - Stellar Gold */
+    --accent: 45 90% 60%;
+    --accent-foreground: 230 25% 7%;
 
-    /* Semantic colors for medical status */
-    --success: 152 60% 40%;
+    /* Semantic colors */
+    --success: 160 70% 45%;
     --success-foreground: 0 0% 100%;
     
-    --warning: 38 92% 50%;
-    --warning-foreground: 0 0% 100%;
+    --warning: 35 95% 55%;
+    --warning-foreground: 0 0% 0%;
     
-    --critical: 0 72% 51%;
+    --critical: 0 75% 55%;
     --critical-foreground: 0 0% 100%;
 
-    --info: 200 85% 50%;
+    --info: 200 90% 55%;
     --info-foreground: 0 0% 100%;
 
     /* Destructive */
-    --destructive: 0 72% 51%;
+    --destructive: 0 75% 55%;
     --destructive-foreground: 0 0% 100%;
 
-    /* Borders and inputs */
-    --border: 210 20% 88%;
-    --input: 210 20% 88%;
-    --ring: 187 75% 35%;
+    /* Borders */
+    --border: 230 30% 20%;
+    --input: 230 30% 18%;
+    --ring: 185 80% 55%;
 
     --radius: 0.75rem;
 
     /* Sidebar */
-    --sidebar-background: 0 0% 100%;
-    --sidebar-foreground: 215 25% 25%;
-    --sidebar-primary: 187 75% 35%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 187 70% 95%;
-    --sidebar-accent-foreground: 187 75% 30%;
-    --sidebar-border: 210 20% 90%;
-    --sidebar-ring: 187 75% 35%;
+    --sidebar-background: 230 30% 10%;
+    --sidebar-foreground: 220 20% 90%;
+    --sidebar-primary: 185 80% 55%;
+    --sidebar-primary-foreground: 230 25% 7%;
+    --sidebar-accent: 260 40% 25%;
+    --sidebar-accent-foreground: 220 20% 95%;
+    --sidebar-border: 230 30% 18%;
+    --sidebar-ring: 185 80% 55%;
 
-    /* Custom gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(187 75% 35%), hsl(200 80% 45%));
-    --gradient-success: linear-gradient(135deg, hsl(152 60% 40%), hsl(160 55% 50%));
-    --gradient-warning: linear-gradient(135deg, hsl(38 92% 50%), hsl(45 90% 55%));
-    --gradient-critical: linear-gradient(135deg, hsl(0 72% 51%), hsl(15 80% 55%));
-    --gradient-surface: linear-gradient(180deg, hsl(210 20% 98%), hsl(210 15% 96%));
+    /* Space gradients */
+    --gradient-nebula: linear-gradient(135deg, hsl(260 60% 25%), hsl(230 40% 15%), hsl(200 50% 20%));
+    --gradient-aurora: linear-gradient(180deg, hsl(185 80% 55% / 0.1), transparent);
+    --gradient-cosmic: radial-gradient(ellipse at 50% 0%, hsl(260 50% 30% / 0.3), transparent 70%);
+    --gradient-card: linear-gradient(135deg, hsl(230 30% 14%), hsl(230 35% 10%));
 
-    /* Shadows */
-    --shadow-sm: 0 1px 2px 0 hsl(215 25% 15% / 0.05);
-    --shadow-md: 0 4px 6px -1px hsl(215 25% 15% / 0.07), 0 2px 4px -2px hsl(215 25% 15% / 0.05);
-    --shadow-lg: 0 10px 15px -3px hsl(215 25% 15% / 0.08), 0 4px 6px -4px hsl(215 25% 15% / 0.05);
-    --shadow-xl: 0 20px 25px -5px hsl(215 25% 15% / 0.1), 0 8px 10px -6px hsl(215 25% 15% / 0.05);
-    --shadow-glow: 0 0 20px hsl(187 75% 35% / 0.15);
-  }
-
-  .dark {
-    --background: 215 25% 9%;
-    --foreground: 210 20% 95%;
-
-    --card: 215 25% 12%;
-    --card-foreground: 210 20% 95%;
-
-    --popover: 215 25% 12%;
-    --popover-foreground: 210 20% 95%;
-
-    --primary: 187 70% 50%;
-    --primary-foreground: 215 25% 9%;
-
-    --secondary: 215 20% 18%;
-    --secondary-foreground: 210 20% 90%;
-
-    --muted: 215 20% 18%;
-    --muted-foreground: 210 15% 60%;
-
-    --accent: 187 65% 45%;
-    --accent-foreground: 0 0% 100%;
-
-    --success: 152 55% 45%;
-    --success-foreground: 0 0% 100%;
-    
-    --warning: 38 90% 55%;
-    --warning-foreground: 0 0% 0%;
-    
-    --critical: 0 70% 55%;
-    --critical-foreground: 0 0% 100%;
-
-    --info: 200 80% 55%;
-    --info-foreground: 0 0% 100%;
-
-    --destructive: 0 70% 55%;
-    --destructive-foreground: 0 0% 100%;
-
-    --border: 215 20% 22%;
-    --input: 215 20% 22%;
-    --ring: 187 70% 50%;
-
-    --sidebar-background: 215 25% 10%;
-    --sidebar-foreground: 210 20% 90%;
-    --sidebar-primary: 187 70% 50%;
-    --sidebar-primary-foreground: 215 25% 9%;
-    --sidebar-accent: 215 20% 18%;
-    --sidebar-accent-foreground: 187 65% 60%;
-    --sidebar-border: 215 20% 20%;
-    --sidebar-ring: 187 70% 50%;
-
-    --gradient-primary: linear-gradient(135deg, hsl(187 70% 50%), hsl(200 75% 55%));
-    --shadow-glow: 0 0 25px hsl(187 70% 50% / 0.2);
+    /* Glow effects */
+    --glow-primary: 0 0 30px hsl(185 80% 55% / 0.4);
+    --glow-accent: 0 0 25px hsl(45 90% 60% / 0.3);
+    --glow-critical: 0 0 20px hsl(0 75% 55% / 0.4);
+    --glow-success: 0 0 20px hsl(160 70% 45% / 0.3);
   }
 }
 
@@ -154,53 +98,110 @@
 }
 
 @layer components {
-  .card-medical {
-    @apply bg-card rounded-xl border shadow-sm hover:shadow-md transition-shadow duration-200;
+  .card-space {
+    @apply relative bg-card/80 backdrop-blur-xl rounded-xl border border-white/10 overflow-hidden;
+    background: var(--gradient-card);
+  }
+
+  .card-space::before {
+    content: '';
+    @apply absolute inset-0 opacity-50;
+    background: var(--gradient-aurora);
+    pointer-events: none;
+  }
+
+  .glow-border {
+    @apply relative;
+    box-shadow: inset 0 1px 0 0 hsl(185 80% 55% / 0.1);
   }
 
   .status-normal {
-    @apply bg-success/10 text-success border-success/20;
+    @apply bg-success/20 text-success border-success/30;
+    text-shadow: 0 0 10px currentColor;
   }
 
   .status-warning {
-    @apply bg-warning/10 text-warning border-warning/20;
+    @apply bg-warning/20 text-warning border-warning/30;
+    text-shadow: 0 0 10px currentColor;
   }
 
   .status-critical {
-    @apply bg-critical/10 text-critical border-critical/20;
+    @apply bg-critical/20 text-critical border-critical/30;
+    text-shadow: 0 0 10px currentColor;
   }
 
   .status-info {
-    @apply bg-info/10 text-info border-info/20;
+    @apply bg-info/20 text-info border-info/30;
   }
 
-  .gradient-primary {
-    background: var(--gradient-primary);
+  .gradient-nebula {
+    background: var(--gradient-nebula);
   }
 
-  .gradient-success {
-    background: var(--gradient-success);
+  .gradient-cosmic {
+    background: var(--gradient-cosmic);
   }
 
-  .gradient-warning {
-    background: var(--gradient-warning);
+  .glow-primary {
+    box-shadow: var(--glow-primary);
   }
 
-  .gradient-critical {
-    background: var(--gradient-critical);
+  .glow-accent {
+    box-shadow: var(--glow-accent);
   }
 
-  .shadow-glow {
-    box-shadow: var(--shadow-glow);
+  .glow-text {
+    text-shadow: 0 0 20px currentColor, 0 0 40px currentColor;
   }
 
-  .animate-pulse-slow {
-    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  /* Star field animation */
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px hsl(var(--critical) / 0.3); }
+    50% { box-shadow: 0 0 40px hsl(var(--critical) / 0.6), 0 0 60px hsl(var(--critical) / 0.3); }
+  }
+
+  @keyframes shooting-star {
+    0% { transform: translateX(0) translateY(0); opacity: 1; }
+    100% { transform: translateX(-200px) translateY(200px); opacity: 0; }
+  }
+
+  .animate-twinkle {
+    animation: twinkle 3s ease-in-out infinite;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+
+  .shooting-star {
+    animation: shooting-star 1s linear forwards;
   }
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+
+  .glass-strong {
+    @apply bg-white/10 backdrop-blur-2xl border border-white/20;
   }
 }
